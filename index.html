@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CyberSecurity Skill Tree</title>
+<title>CyberSecurity Mega Skill Tree</title>
 <style>
  body { font-family: Arial, sans-serif; background:#0a0a0a; color:white; padding:30px; }
  .node { cursor:pointer; user-select:none; font-size:22px; margin:10px 0; transition:0.2s; }
@@ -10,150 +10,191 @@
  .children { margin-left:30px; display:none; opacity:0; transition:opacity 0.3s ease; }
  .open { display:block !important; opacity:1 !important; }
  .line { border-left:2px solid #555; padding-left:15px; margin-left:10px; }
- .tool-list { font-size:15px; color:#cfcfcf; margin:5px 0 15px 15px; }
+ a { color:#00c8ff; }
+ ul { margin:5px 0 20px 20px; }
 </style>
 </head>
 <body>
+<h2>⚡ CyberSecurity Mega Skill Tree</h2>
+
 <div class="node" onclick="toggle('root')">▶ CyberSecurity</div>
 <div id="root" class="children">
+<div class="line">
 
-  <div class="line">
-    <div class="node" onclick="toggle('mal')">▶ Malware Analysis</div>
-    <div id="mal" class="children">
-      <div class="tool-list">Tools: Ghidra, IDA Free, PEStudio, Cuckoo Sandbox, CAPA</div>
-    </div>
+<!-- ================= MALWARE ANALYSIS ================= -->
+<div class="node" onclick="toggle('mal')">▶ Malware Analysis</div>
+<div id="mal" class="children">
+<ul>
+<li><a href="https://ghidra-sre.org">Ghidra</a></li>
+<li><a href="https://hex-rays.com/ida-free/">IDA Free</a></li>
+<li><a href="https://www.stratesave.com/pestudio/">PEStudio</a></li>
+<li><a href="https://cuckoosandbox.org/">Cuckoo Sandbox</a></li>
+<li><a href="https://github.com/mandiant/capa">CAPA</a></li>
+<li><a href="https://github.com/hasherezade/pe-sieve">pe-sieve</a></li>
+<li><a href="https://www.malwareconfig.com/">MalConfScan</a></li>
+<li><a href="https://www.virustotal.com">VirusTotal</a></li>
+<li><a href="https://any.run">ANY.RUN</a></li>
+<li><a href="https://tria.ge">Triage</a></li>
+<li><a href="https://github.com/fireeye/flare-vm">FLARE‑VM</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('rev')">▶ Reverse Engineering</div>
-    <div id="rev" class="children">
-      <div class="tool-list">Tools: Ghidra, x64dbg, Radare2, Binary Ninja</div>
-    </div>
+<!-- ================= REVERSE ENGINEERING ================= -->
+<div class="node" onclick="toggle('rev')">▶ Reverse Engineering</div>
+<div id="rev" class="children">
+<ul>
+<li><a href="https://ghidra-sre.org">Ghidra</a></li>
+<li><a href="https://x64dbg.com/">x64dbg</a></li>
+<li><a href="https://github.com/radareorg/radare2">Radare2</a></li>
+<li><a href="https://binary.ninja/">Binary Ninja</a></li>
+<li><a href="https://github.com/angr/angr">angr</a></li>
+<li><a href="https://lldb.llvm.org/">LLDB</a></li>
+<li><a href="https://www.gnu.org/software/gdb/">GDB</a></li>
+<li><a href="https://github.com/hasherezade/hollows_hunter">HollowsHunter</a></li>
+<li><a href="https://github.com/mandiant/reflective-loader">Reflective DLL tools</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('net')">▶ Network Pentesting</div>
-    <div id="net" class="children">
-      <div class="tool-list">Tools: Nmap, Wireshark, Bettercap, MITMf, responder</div>
-    </div>
+<!-- ================= NETWORK PENTEST ================= -->
+<div class="node" onclick="toggle('net')">▶ Network Pentesting</div>
+<div id="net" class="children">
+<ul>
+<li><a href="https://nmap.org">Nmap</a></li>
+<li><a href="https://www.wireshark.org/">Wireshark</a></li>
+<li><a href="https://www.aircrack-ng.org/">Aircrack‑ng</a></li>
+<li><a href="https://github.com/bettercap/bettercap">Bettercap</a></li>
+<li><a href="https://github.com/lgandx/Responder">Responder</a></li>
+<li><a href="https://github.com/SpiderLabs/Responder">LLMNR poisoning</a></li>
+<li><a href="https://ettercap.github.io/ettercap/">Ettercap</a></li>
+<li><a href="https://github.com/sensepost/gowitness">gowitness</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('osint')">▶ OSINT</div>
-    <div id="osint" class="children">
-      <div class="tool-list">Tools: Maltego, Spiderfoot, Sherlock, FOCA, Shodan</div>
-    </div>
+<!-- ================= OSINT ================= -->
+<div class="node" onclick="toggle('osint')">▶ OSINT Tools</div>
+<div id="osint" class="children">
+<ul>
+<li><a href="https://github.com/sherlock-project/sherlock">Sherlock</a></li>
+<li><a href="https://www.maltego.com/">Maltego</a></li>
+<li><a href="https://github.com/smicallef/spiderfoot">SpiderFoot</a></li>
+<li><a href="https://github.com/laramies/theHarvester">theHarvester</a></li>
+<li><a href="https://github.com/opsdisk/metagoofil">MetaGoofil</a></li>
+<li><a href="https://github.com/vaguileradiaz/tinfoleak">Tinfoleak</a></li>
+<li><a href="https://github.com/WebBreacher/WhatsMyName">WhatsMyName</a></li>
+<li><a href="https://osintframework.com/">OSINT Framework</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('anon')">▶ Anonymous OS</div>
-    <div id="anon" class="children">
-      <div class="tool-list">Qubes OS, Tails, Whonix</div>
-    </div>
+<!-- ================= ENC ================= -->
+<div class="node" onclick="toggle('enc')">▶ Encryption</div>
+<div id="enc" class="children">
+<ul>
+<li><a href="https://www.veracrypt.fr/">VeraCrypt</a></li>
+<li><a href="https://github.com/FiloSottile/age">age</a></li>
+<li><a href="https://gnupg.org/">GPG</a></li>
+<li><a href="https://www.openssl.org/">OpenSSL</a></li>
+<li><a href="https://github.com/mozilla/sops">SOPS</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('browser')">▶ Full Private Browser Setup</div>
-    <div id="browser" class="children">
-      <div class="tool-list">Browsers: Librewolf, Tor Browser; Extensions: uBlock Origin, NoScript, LocalCDN</div>
-    </div>
+<!-- ================= WIRELESS ================= -->
+<div class="node" onclick="toggle('wifi')">▶ Wireless Hacking</div>
+<div id="wifi" class="children">
+<ul>
+<li><a href="https://www.aircrack-ng.org/">Aircrack‑ng</a></li>
+<li><a href="https://github.com/derv82/wifite2">Wifite2</a></li>
+<li><a href="https://github.com/ZerBea/hcxtools">hcxtools</a></li>
+<li><a href="https://www.kismetwireless.net/">Kismet</a></li>
+<li><a href="https://github.com/kimocoder/wifi-arsenal">WiFi‑Arsenal</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('hard')">▶ Max Privacy Hardening</div>
-    <div id="hard" class="children">
-      <div class="tool-list">Firewalls, DNS over TLS, VPN chaining, sandboxing</div>
-    </div>
+<!-- ================= WEB EXPLOITATION ================= -->
+<div class="node" onclick="toggle('web')">▶ Web Exploitation</div>
+<div id="web" class="children">
+<ul>
+<li><a href="https://portswigger.net/burp">Burp Suite</a></li>
+<li><a href="https://sqlmap.org/">SQLmap</a></li>
+<li><a href="https://github.com/s0md3v/XSStrike">XSStrike</a></li>
+<li><a href="https://github.com/ffuf/ffuf">ffuf</a></li>
+<li><a href="https://github.com/wpscanteam/wpscan">WPScan</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('enc')">▶ Encryption</div>
-    <div id="enc" class="children">
-      <div class="tool-list">AES, RSA, PGP, VeraCrypt, age, SOPS</div>
-    </div>
+<!-- ================= MOBILE HACKING ================= -->
+<div class="node" onclick="toggle('mobile')">▶ Mobile Hacking</div>
+<div id="mobile" class="children">
+<ul>
+<li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF</a></li>
+<li><a href="https://github.com/WithSecureLabs/drozer">Drozer</a></li>
+<li><a href="https://frida.re/">Frida</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('wifi')">▶ Wireless Hacking</div>
-    <div id="wifi" class="children">
-      <div class="tool-list">Tools: Aircrack-ng, Wifite2, hcxtools, Kismet</div>
-    </div>
+<!-- ================= CLOUD ================= -->
+<div class="node" onclick="toggle('cloud')">▶ Cloud Security</div>
+<div id="cloud" class="children">
+<ul>
+<li><a href="https://github.com/nccgroup/ScoutSuite">ScoutSuite</a></li>
+<li><a href="https://github.com/prowler-cloud/prowler">Prowler</a></li>
+<li><a href="https://github.com/salesforce/cloudsplaining">Cloudsplaining</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('exploit')">▶ Exploit Development</div>
-    <div id="exploit" class="children">
-      <div class="tool-list">GDB, pwntools, radare2, Ropper</div>
-    </div>
+<!-- ================= ZERO DAY ================= -->
+<div class="node" onclick="toggle('zero')">▶ Zero‑Day Research</div>
+<div id="zero" class="children">
+<ul>
+<li><a href="https://github.com/google/AFL">AFL++</a></li>
+<li><a href="https://llvm.org/docs/LibFuzzer.html">LibFuzzer</a></li>
+<li><a href="https://github.com/google/honggfuzz">Honggfuzz</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('dfir')">▶ Digital Forensics</div>
-    <div id="dfir" class="children">
-      <div class="tool-list">Autopsy, Volatility, Redline, FTK Imager</div>
-    </div>
+<!-- ================= PASSWORD CRACKING ================= -->
+<div class="node" onclick="toggle('crack')">▶ Password Cracking</div>
+<div id="crack" class="children">
+<ul>
+<li><a href="https://hashcat.net/hashcat/">Hashcat</a></li>
+<li><a href="https://www.openwall.com/john/">John the Ripper</a></li>
+<li><a href="https://github.com/hashcat/princeprocessor">PrinceProcessor</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('red')">▶ Red Teaming</div>
-    <div id="red" class="children">
-      <div class="tool-list">Cobalt Strike, Sliver, Covenant, Mythic</div>
-    </div>
+<!-- ================= ANON NETWORKING ================= -->
+<div class="node" onclick="toggle('anonnet')">▶ Anonymous Networking</div>
+<div id="anonnet" class="children">
+<ul>
+<li><a href="https://www.torproject.org/">Tor</a></li>
+<li><a href="https://mullvad.net">Mullvad VPN</a></li>
+<li><a href="https://geti2p.net/en/">I2P</a></li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('blue')">▶ Blue Teaming</div>
-    <div id="blue" class="children">
-      <div class="tool-list">SIEM: Wazuh, Splunk; IDS: Suricata, Zeek</div>
-    </div>
+<!-- ================= PRIVATE BROWSER ================= -->
+<div class="node" onclick="toggle('browser')">▶ Full Private Browser Setup</div>
+<div id="browser" class="children">
+<ul>
+<li>LibreWolf + uBlock Origin + NoScript + LocalCDN</li>
+<li>Tor Browser (safest mode)</li>
+<li>Firefox Hardened (arkenfox)</li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('soceng')">▶ Social Engineering</div>
-    <div id="soceng" class="children">
-      <div class="tool-list">SET Toolkit, GoPhish</div>
-    </div>
+<!-- ================= HARDENING ================= -->
+<div class="node" onclick="toggle('hard')">▶ Max Privacy Hardening</div>
+<div id="hard" class="children">
+<ul>
+<li>VPN chaining</li>
+<li>Firewall strict rules</li>
+<li>Sysctl kernel hardening</li>
+<li>Sandboxing via Firejail / Qubes</li>
+</ul>
+</div>
 
-    <div class="node" onclick="toggle('hw')">▶ Hardware Hacking</div>
-    <div id="hw" class="children">
-      <div class="tool-list">USB Rubber Ducky, Flipper Zero, Proxmark3</div>
-    </div>
+<!-- END -->
 
-    <div class="node" onclick="toggle('ctf')">▶ CTF Skills</div>
-    <div id="ctf" class="children">
-      <div class="tool-list">Tools: CyberChef, pwntools, Burp Suite Community</div>
-    </div>
-
-    <div class="node" onclick="toggle('web')">▶ Web Exploitation</div>
-    <div id="web" class="children">
-      <div class="tool-list">Burp Suite, SQLmap, XSStrike, ffuf</div>
-    </div>
-
-    <div class="node" onclick="toggle('mobile')">▶ Mobile Hacking</div>
-    <div id="mobile" class="children">
-      <div class="tool-list">MobSF, Drozer, Frida</div>
-    </div>
-
-    <div class="node" onclick="toggle('cloud')">▶ Cloud Security</div>
-    <div id="cloud" class="children">
-      <div class="tool-list">ScoutSuite, Prowler, IAM Analyzer</div>
-    </div>
-
-    <div class="node" onclick="toggle('dock')">▶ Container Security</div>
-    <div id="dock" class="children">
-      <div class="tool-list">Trivy, Falco, kube-hunter</div>
-    </div>
-
-    <div class="node" onclick="toggle('zero')">▶ Zero-Day Research</div>
-    <div id="zero" class="children">
-      <div class="tool-list">AFL++, LibFuzzer, Honggfuzz</div>
-    </div>
-
-    <div class="node" onclick="toggle('steg')">▶ Steganography</div>
-    <div id="steg" class="children">
-      <div class="tool-list">Stegseek, zsteg, OpenStego</div>
-    </div>
-
-    <div class="node" onclick="toggle('crack')">▶ Password Cracking</div>
-    <div id="crack" class="children">
-      <div class="tool-list">Hashcat, John the Ripper, PrinceGen</div>
-    </div>
-
-    <div class="node" onclick="toggle('hardos')">▶ OS Hardening</div>
-    <div id="hardos" class="children">
-      <div class="tool-list">AppArmor, SELinux, sysctl tweaks</div>
-    </div>
-
-    <div class="node" onclick="toggle('netdef')">▶ Network Defense</div>
-    <div id="netdef" class="children">
-      <div class="tool-list">Suricata, Zeek, PFsense, OPNsense</div>
-    </div>
-
-    <div class="node" onclick="toggle('anonnet')">▶ Anonymous Networking</div>
-    <div id="anonnet" class="children">
-      <div class="tool-list">Tor, Mullvad VPN, I2P</div>
-    </div>
-
-    <div class="node" onclick="toggle('securecode')">▶ Secure Coding</div>
-    <div id="securecode" class="children">
-      <div class="tool-list">SAST, DAST, fuzzing, sanitization frameworks</div>
-    </div>
-
-  </div>
+</div>
 </div>
 
 <script>
