@@ -2,206 +2,211 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CyberSecurity Mega Skill Tree</title>
+<title>CyberSecurity & Hacking Mega Skill Tree</title>
+
 <style>
- body { font-family: Arial, sans-serif; background:#0a0a0a; color:white; padding:30px; }
- .node { cursor:pointer; user-select:none; font-size:22px; margin:10px 0; transition:0.2s; }
- .node:hover { color:#00e1ff; }
- .children { margin-left:30px; display:none; opacity:0; transition:opacity 0.3s ease; }
- .open { display:block !important; opacity:1 !important; }
- .line { border-left:2px solid #555; padding-left:15px; margin-left:10px; }
- a { color:#00c8ff; }
- ul { margin:5px 0 20px 20px; }
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: #e2e2e2;
+    padding: 35px;
+}
+
+h2 {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.node {
+    cursor: pointer;
+    user-select: none;
+    font-size: 22px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    transition: 0.25s;
+}
+
+.node:hover {
+    color: #00eaff;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+.arrow {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.25s ease;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+.children {
+    margin-left: 30px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.open {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.line {
+    border-left: 2px solid #0b97a8;
+    padding-left: 15px;
+    margin-left: 10px;
+    box-shadow: 0 0 5px #00eaff;
+}
+
+a {
+    color: #00c8ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: white;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+ul {
+    margin: 5px 0 20px 20px;
+    padding-left: 0;
+}
 </style>
 </head>
-<body>
-<h2>⚡ CyberSecurity Mega Skill Tree</h2>
 
-<div class="node" onclick="toggle('root')">▶ CyberSecurity</div>
-<div id="root" class="children">
+<body>
+
+<h2>⚡ CyberSecurity & Hacking Mega Skill Tree</h2>
+
+<!-- ================= CYBERSECURITY ================= -->
+
+<div class="node" onclick="toggle('cyber', this)">
+    <span class="arrow">▶</span> CyberSecurity
+</div>
+
+<div id="cyber" class="children">
 <div class="line">
 
-<!-- ================= MALWARE ANALYSIS ================= -->
-<div class="node" onclick="toggle('mal')">▶ Malware Analysis</div>
-<div id="mal" class="children">
+<!-- BASIC CYBERSECURITY -->
+<div class="node" onclick="toggle('cyber-basic', this)">
+    <span class="arrow">▶</span> Basic
+</div>
+<div id="cyber-basic" class="children">
+<ul>
+<li><a href="https://www.kali.org/">Kali Linux</a></li>
+<li><a href="https://www.debian.org/">Debian Hardening</a></li>
+<li><a href="https://wiki.archlinux.org/title/Security">Linux Security Basics</a></li>
+<li><a href="https://www.veracrypt.fr/">VeraCrypt</a></li>
+<li><a href="https://www.mozilla.org/en-US/firefox/new/">Secure Browser Setup</a></li>
+<li><a href="https://www.wireshark.org/">Wireshark (Basics)</a></li>
+<li><a href="https://nmap.org">Nmap (Basics)</a></li>
+</ul>
+</div>
+
+<!-- ADVANCED CYBERSECURITY -->
+<div class="node" onclick="toggle('cyber-adv', this)">
+    <span class="arrow">▶</span> Advanced
+</div>
+<div id="cyber-adv" class="children">
 <ul>
 <li><a href="https://ghidra-sre.org">Ghidra</a></li>
 <li><a href="https://hex-rays.com/ida-free/">IDA Free</a></li>
-<li><a href="https://www.stratesave.com/pestudio/">PEStudio</a></li>
 <li><a href="https://cuckoosandbox.org/">Cuckoo Sandbox</a></li>
-<li><a href="https://github.com/mandiant/capa">CAPA</a></li>
-<li><a href="https://github.com/hasherezade/pe-sieve">pe-sieve</a></li>
-<li><a href="https://www.malwareconfig.com/">MalConfScan</a></li>
-<li><a href="https://www.virustotal.com">VirusTotal</a></li>
-<li><a href="https://any.run">ANY.RUN</a></li>
-<li><a href="https://tria.ge">Triage</a></li>
-<li><a href="https://github.com/fireeye/flare-vm">FLARE‑VM</a></li>
-</ul>
-</div>
-
-<!-- ================= REVERSE ENGINEERING ================= -->
-<div class="node" onclick="toggle('rev')">▶ Reverse Engineering</div>
-<div id="rev" class="children">
-<ul>
-<li><a href="https://ghidra-sre.org">Ghidra</a></li>
+<li><a href="https://www.virustotal.com/">VirusTotal</a></li>
+<li><a href="https://tria.ge/">Triage</a></li>
 <li><a href="https://x64dbg.com/">x64dbg</a></li>
-<li><a href="https://github.com/radareorg/radare2">Radare2</a></li>
 <li><a href="https://binary.ninja/">Binary Ninja</a></li>
-<li><a href="https://github.com/angr/angr">angr</a></li>
-<li><a href="https://lldb.llvm.org/">LLDB</a></li>
-<li><a href="https://www.gnu.org/software/gdb/">GDB</a></li>
-<li><a href="https://github.com/hasherezade/hollows_hunter">HollowsHunter</a></li>
-<li><a href="https://github.com/mandiant/reflective-loader">Reflective DLL tools</a></li>
-</ul>
-</div>
-
-<!-- ================= NETWORK PENTEST ================= -->
-<div class="node" onclick="toggle('net')">▶ Network Pentesting</div>
-<div id="net" class="children">
-<ul>
-<li><a href="https://nmap.org">Nmap</a></li>
+<li><a href="https://github.com/radareorg/radare2">Radare2</a></li>
 <li><a href="https://www.wireshark.org/">Wireshark</a></li>
-<li><a href="https://www.aircrack-ng.org/">Aircrack‑ng</a></li>
 <li><a href="https://github.com/bettercap/bettercap">Bettercap</a></li>
-<li><a href="https://github.com/lgandx/Responder">Responder</a></li>
-<li><a href="https://github.com/SpiderLabs/Responder">LLMNR poisoning</a></li>
 <li><a href="https://ettercap.github.io/ettercap/">Ettercap</a></li>
-<li><a href="https://github.com/sensepost/gowitness">gowitness</a></li>
+<li><a href="https://github.com/nccgroup/ScoutSuite">ScoutSuite</a></li>
+<li><a href="https://github.com/prowler-cloud/prowler">Prowler</a></li>
+<li><a href="https://github.com/google/AFL">AFL++</a></li>
+<li><a href="https://github.com/google/honggfuzz">Honggfuzz</a></li>
+<li><a href="https://www.qubes-os.org/">Qubes OS</a></li>
+<li><a href="https://mullvad.net/">Mullvad VPN</a></li>
+<li><a href="https://www.torproject.org/">Tor Browser</a></li>
 </ul>
 </div>
 
-<!-- ================= OSINT ================= -->
-<div class="node" onclick="toggle('osint')">▶ OSINT Tools</div>
-<div id="osint" class="children">
+</div>
+</div>
+
+
+
+<!-- ================= HACKING ================= -->
+
+<div class="node" onclick="toggle('hack', this)">
+    <span class="arrow">▶</span> Hacking
+</div>
+
+<div id="hack" class="children">
+<div class="line">
+
+<!-- BASIC HACKING -->
+<div class="node" onclick="toggle('hack-basic', this)">
+    <span class="arrow">▶</span> Basic
+</div>
+<div id="hack-basic" class="children">
 <ul>
-<li><a href="https://github.com/sherlock-project/sherlock">Sherlock</a></li>
-<li><a href="https://www.maltego.com/">Maltego</a></li>
-<li><a href="https://github.com/smicallef/spiderfoot">SpiderFoot</a></li>
+<li><a href="https://nmap.org/">Nmap Scanning</a></li>
+<li><a href="https://github.com/sherlock-project/sherlock">Sherlock (OSINT)</a></li>
 <li><a href="https://github.com/laramies/theHarvester">theHarvester</a></li>
-<li><a href="https://github.com/opsdisk/metagoofil">MetaGoofil</a></li>
-<li><a href="https://github.com/vaguileradiaz/tinfoleak">Tinfoleak</a></li>
+<li><a href="https://github.com/smicallef/spiderfoot">SpiderFoot</a></li>
 <li><a href="https://github.com/WebBreacher/WhatsMyName">WhatsMyName</a></li>
-<li><a href="https://osintframework.com/">OSINT Framework</a></li>
+<li><a href="https://hashcat.net/hashcat/">Hashcat</a></li>
+<li><a href="https://www.openwall.com/john/">John the Ripper</a></li>
 </ul>
 </div>
 
-<!-- ================= ENC ================= -->
-<div class="node" onclick="toggle('enc')">▶ Encryption</div>
-<div id="enc" class="children">
-<ul>
-<li><a href="https://www.veracrypt.fr/">VeraCrypt</a></li>
-<li><a href="https://github.com/FiloSottile/age">age</a></li>
-<li><a href="https://gnupg.org/">GPG</a></li>
-<li><a href="https://www.openssl.org/">OpenSSL</a></li>
-<li><a href="https://github.com/mozilla/sops">SOPS</a></li>
-</ul>
+<!-- ADVANCED HACKING -->
+<div class="node" onclick="toggle('hack-adv', this)">
+    <span class="arrow">▶</span> Advanced
 </div>
-
-<!-- ================= WIRELESS ================= -->
-<div class="node" onclick="toggle('wifi')">▶ Wireless Hacking</div>
-<div id="wifi" class="children">
-<ul>
-<li><a href="https://www.aircrack-ng.org/">Aircrack‑ng</a></li>
-<li><a href="https://github.com/derv82/wifite2">Wifite2</a></li>
-<li><a href="https://github.com/ZerBea/hcxtools">hcxtools</a></li>
-<li><a href="https://www.kismetwireless.net/">Kismet</a></li>
-<li><a href="https://github.com/kimocoder/wifi-arsenal">WiFi‑Arsenal</a></li>
-</ul>
-</div>
-
-<!-- ================= WEB EXPLOITATION ================= -->
-<div class="node" onclick="toggle('web')">▶ Web Exploitation</div>
-<div id="web" class="children">
+<div id="hack-adv" class="children">
 <ul>
 <li><a href="https://portswigger.net/burp">Burp Suite</a></li>
 <li><a href="https://sqlmap.org/">SQLmap</a></li>
 <li><a href="https://github.com/s0md3v/XSStrike">XSStrike</a></li>
 <li><a href="https://github.com/ffuf/ffuf">ffuf</a></li>
-<li><a href="https://github.com/wpscanteam/wpscan">WPScan</a></li>
-</ul>
-</div>
-
-<!-- ================= MOBILE HACKING ================= -->
-<div class="node" onclick="toggle('mobile')">▶ Mobile Hacking</div>
-<div id="mobile" class="children">
-<ul>
+<li><a href="https://www.aircrack-ng.org/">Aircrack‑ng</a></li>
+<li><a href="https://github.com/derv82/wifite2">Wifite2</a></li>
+<li><a href="https://www.kismetwireless.net/">Kismet</a></li>
 <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF</a></li>
-<li><a href="https://github.com/WithSecureLabs/drozer">Drozer</a></li>
 <li><a href="https://frida.re/">Frida</a></li>
-</ul>
-</div>
-
-<!-- ================= CLOUD ================= -->
-<div class="node" onclick="toggle('cloud')">▶ Cloud Security</div>
-<div id="cloud" class="children">
-<ul>
-<li><a href="https://github.com/nccgroup/ScoutSuite">ScoutSuite</a></li>
-<li><a href="https://github.com/prowler-cloud/prowler">Prowler</a></li>
-<li><a href="https://github.com/salesforce/cloudsplaining">Cloudsplaining</a></li>
-</ul>
-</div>
-
-<!-- ================= ZERO DAY ================= -->
-<div class="node" onclick="toggle('zero')">▶ Zero‑Day Research</div>
-<div id="zero" class="children">
-<ul>
-<li><a href="https://github.com/google/AFL">AFL++</a></li>
-<li><a href="https://llvm.org/docs/LibFuzzer.html">LibFuzzer</a></li>
-<li><a href="https://github.com/google/honggfuzz">Honggfuzz</a></li>
-</ul>
-</div>
-
-<!-- ================= PASSWORD CRACKING ================= -->
-<div class="node" onclick="toggle('crack')">▶ Password Cracking</div>
-<div id="crack" class="children">
-<ul>
-<li><a href="https://hashcat.net/hashcat/">Hashcat</a></li>
-<li><a href="https://www.openwall.com/john/">John the Ripper</a></li>
-<li><a href="https://github.com/hashcat/princeprocessor">PrinceProcessor</a></li>
-</ul>
-</div>
-
-<!-- ================= ANON NETWORKING ================= -->
-<div class="node" onclick="toggle('anonnet')">▶ Anonymous Networking</div>
-<div id="anonnet" class="children">
-<ul>
+<li><a href="https://github.com/WithSecureLabs/drozer">Drozer</a></li>
 <li><a href="https://www.torproject.org/">Tor</a></li>
-<li><a href="https://mullvad.net">Mullvad VPN</a></li>
-<li><a href="https://geti2p.net/en/">I2P</a></li>
+<li><a href="https://mullvad.net/">Mullvad</a></li>
+<li><a href="https://geti2p.net/">I2P</a></li>
+<li><a href="https://osintframework.com/">OSINT Framework</a></li>
+<li><a href="https://maltego.com/">Maltego</a></li>
+<li><a href="https://www.autopsy.com/">Autopsy</a></li>
+<li><a href="https://www.sleuthkit.org/sleuthkit/">Sleuth Kit</a></li>
 </ul>
 </div>
 
-<!-- ================= PRIVATE BROWSER ================= -->
-<div class="node" onclick="toggle('browser')">▶ Full Private Browser Setup</div>
-<div id="browser" class="children">
-<ul>
-<li>LibreWolf + uBlock Origin + NoScript + LocalCDN</li>
-<li>Tor Browser (safest mode)</li>
-<li>Firefox Hardened (arkenfox)</li>
-</ul>
+</div>
 </div>
 
-<!-- ================= HARDENING ================= -->
-<div class="node" onclick="toggle('hard')">▶ Max Privacy Hardening</div>
-<div id="hard" class="children">
-<ul>
-<li>VPN chaining</li>
-<li>Firewall strict rules</li>
-<li>Sysctl kernel hardening</li>
-<li>Sandboxing via Firejail / Qubes</li>
-</ul>
-</div>
 
-<!-- END -->
-
-</div>
-</div>
 
 <script>
-function toggle(id){
-  var el=document.getElementById(id);
-  el.classList.toggle('open');
+function toggle(id, element){
+    let box = document.getElementById(id);
+    let arrow = element.querySelector(".arrow");
+
+    box.classList.toggle("open");
+    arrow.classList.toggle("rotate");
 }
 </script>
+
 </body>
 </html>
