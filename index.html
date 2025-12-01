@@ -2,121 +2,165 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Learning Tree</title>
+<title>CyberSecurity Skill Tree</title>
 <style>
-  body { font-family: sans-serif; padding: 20px; background:#f0f0f0; }
-  .circle {
-    width: 120px; height: 120px;
-    border-radius: 50%; background:#444; color:#fff;
-    display:flex; justify-content:center; align-items:center;
-    cursor:pointer; margin:10px; font-weight:bold;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .circle:hover { transform: scale(1.1); box-shadow: 0 0 10px #000; }
-  .tree { display:none; margin-left:20px; margin-bottom:15px; padding:10px; background:#fff; border-radius:8px; }
-  a { color:#00f; display:block; margin:4px 0; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .title { font-weight:bold; margin-top:6px; font-size:18px; }
-  .subtitle { font-weight:bold; margin-top:10px; }
+ body { font-family: Arial, sans-serif; background:#0a0a0a; color:white; padding:30px; }
+ .node { cursor:pointer; user-select:none; font-size:22px; margin:10px 0; transition:0.2s; }
+ .node:hover { color:#00e1ff; }
+ .children { margin-left:30px; display:none; opacity:0; transition:opacity 0.3s ease; }
+ .open { display:block !important; opacity:1 !important; }
+ .line { border-left:2px solid #555; padding-left:15px; margin-left:10px; }
+ .tool-list { font-size:15px; color:#cfcfcf; margin:5px 0 15px 15px; }
 </style>
 </head>
 <body>
+<div class="node" onclick="toggle('root')">▶ CyberSecurity</div>
+<div id="root" class="children">
 
-<!-- 1: CYBERSECURITY -->
-<div class="circle" onclick="toggle('t1')">1</div>
-<div id="t1" class="tree">
-  <div class="title">CyberSecurity</div>
-  <p>Covers defending systems, networks, identities, and privacy from attacks.  
-     Useful for: protecting yourself, careers, and understanding online risks.</p>
+  <div class="line">
+    <div class="node" onclick="toggle('mal')">▶ Malware Analysis</div>
+    <div id="mal" class="children">
+      <div class="tool-list">Tools: Ghidra, IDA Free, PEStudio, Cuckoo Sandbox, CAPA</div>
+    </div>
 
-  <!-- LINKS -->
-  <div class="subtitle">Learning Links</div>
-  <a href="https://tryhackme.com" target="_blank">TryHackMe – Labs</a>
-  <a href="https://owasp.org" target="_blank">OWASP – Web standards</a>
-  <a href="https://cybrary.it" target="_blank">Cybrary – Courses</a>
+    <div class="node" onclick="toggle('rev')">▶ Reverse Engineering</div>
+    <div id="rev" class="children">
+      <div class="tool-list">Tools: Ghidra, x64dbg, Radare2, Binary Ninja</div>
+    </div>
 
-  <!-- VPNs -->
-  <div class="subtitle">VPNs (Max Privacy)</div>
-  <p>These keep no logs and have global reputations for transparency.</p>
-  <a href="https://mullvad.net" target="_blank">Mullvad – Best privacy</a>
-  <a href="https://ivpn.net" target="_blank">IVPN – Strong privacy focus</a>
-  <a href="https://protonvpn.com" target="_blank">ProtonVPN – Audited</a>
+    <div class="node" onclick="toggle('net')">▶ Network Pentesting</div>
+    <div id="net" class="children">
+      <div class="tool-list">Tools: Nmap, Wireshark, Bettercap, MITMf, responder</div>
+    </div>
 
-  <!-- OS -->
-  <div class="subtitle">Operating Systems (Safe / Privacy / Security)</div>
-  <p><strong>Qubes OS:</strong> Max isolation. Compartmentalized VMs.</p>
-  <p><strong>Kali Linux:</strong> Pen-testing toolkit, preloaded tools.</p>
-  <p><strong>Parrot OS:</strong> Lightweight security OS.</p>
-  <p><strong>Tails OS:</strong> Tor‑based amnesia system, leaves no traces.</p>
-  
-  <!-- Specs -->
-  <div class="subtitle">Recommended Specs (for Cybersecurity Work)</div>
-  <p><strong>CPU:</strong> 6+ cores (Ryzen 5/7, i5/i7)</p>
-  <p><strong>RAM:</strong> 16GB minimum, 32GB ideal (VMs, Kali, Qubes)</p>
-  <p><strong>Storage:</strong> 512GB SSD minimum</p>
-  <p><strong>GPU:</strong> Optional unless cracking hashes (RTX cards help)</p>
+    <div class="node" onclick="toggle('osint')">▶ OSINT</div>
+    <div id="osint" class="children">
+      <div class="tool-list">Tools: Maltego, Spiderfoot, Sherlock, FOCA, Shodan</div>
+    </div>
 
-  <!-- Browsers -->
-  <div class="subtitle">Private Browsers</div>
-  <p><strong>Firefox Hardened:</strong> Best balance of privacy & usability.</p>
-  <p><strong>LibreWolf:</strong> Debloated, hardened Firefox.</p>
-  <p><strong>Tor Browser:</strong> For anonymity (slow, but safe).</p>
-  
-  <a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a>
-  <a href="https://librewolf.net" target="_blank">LibreWolf</a>
-  <a href="https://www.torproject.org" target="_blank">Tor Browser</a>
+    <div class="node" onclick="toggle('anon')">▶ Anonymous OS</div>
+    <div id="anon" class="children">
+      <div class="tool-list">Qubes OS, Tails, Whonix</div>
+    </div>
 
-  <!-- Extensions -->
-  <div class="subtitle">Recommended Browser Extensions</div>
-  <p><strong>uBlock Origin:</strong> Blocks ads, trackers.</p>
-  <p><strong>Privacy Badger:</strong> Blocks invisible trackers.</p>
-  <p><strong>NoScript (advanced):</strong> Blocks all scripts (requires knowledge).</p>
-  <p><strong>HTTPS Everywhere:</strong> Forces encryption.</p>
+    <div class="node" onclick="toggle('browser')">▶ Full Private Browser Setup</div>
+    <div id="browser" class="children">
+      <div class="tool-list">Browsers: Librewolf, Tor Browser; Extensions: uBlock Origin, NoScript, LocalCDN</div>
+    </div>
 
-  <a href="https://ublockorigin.com" target="_blank">uBlock Origin</a>
-  <a href="https://privacybadger.org" target="_blank">Privacy Badger</a>
-  <a href="https://noscript.net" target="_blank">NoScript</a>
-</div>
+    <div class="node" onclick="toggle('hard')">▶ Max Privacy Hardening</div>
+    <div id="hard" class="children">
+      <div class="tool-list">Firewalls, DNS over TLS, VPN chaining, sandboxing</div>
+    </div>
 
+    <div class="node" onclick="toggle('enc')">▶ Encryption</div>
+    <div id="enc" class="children">
+      <div class="tool-list">AES, RSA, PGP, VeraCrypt, age, SOPS</div>
+    </div>
 
-<!-- 2: ETHICAL HACKING -->
-<div class="circle" onclick="toggle('t2')">2</div>
-<div id="t2" class="tree">
-  <div class="title">Ethical Hacking</div>
-  <p>Learning how attacks work by testing systems legally.</p>
-  <a href="https://hackthebox.com" target="_blank">HackTheBox</a>
-  <a href="https://portswigger.net/web-security" target="_blank">PortSwigger Academy</a>
-  <a href="https://overthewire.org/wargames/" target="_blank">OverTheWire</a>
-</div>
+    <div class="node" onclick="toggle('wifi')">▶ Wireless Hacking</div>
+    <div id="wifi" class="children">
+      <div class="tool-list">Tools: Aircrack-ng, Wifite2, hcxtools, Kismet</div>
+    </div>
 
-<!-- 3: TOOLS -->
-<div class="circle" onclick="toggle('t3')">3</div>
-<div id="t3" class="tree">
-  <div class="title">Tools</div>
-  <p><strong>Burp Suite:</strong> Intercept + test web traffic.</p>
-  <p><strong>Wireshark:</strong> Packet sniffing, network analysis.</p>
-  <p><strong>Nmap:</strong> Port scanning, service detection.</p>
-  <a href="https://portswigger.net/burp" target="_blank">Burp Suite</a>
-  <a href="https://www.wireshark.org" target="_blank">Wireshark</a>
-  <a href="https://nmap.org" target="_blank">Nmap</a>
-</div>
+    <div class="node" onclick="toggle('exploit')">▶ Exploit Development</div>
+    <div id="exploit" class="children">
+      <div class="tool-list">GDB, pwntools, radare2, Ropper</div>
+    </div>
 
-<!-- 4: LEARNING PATH -->
-<div class="circle" onclick="toggle('t4')">4</div>
-<div id="t4" class="tree">
-  <div class="title">Learning Path</div>
-  <p>Step-by-step way to learn security from beginner to advanced.</p>
-  <a href="https://hackthebox.com" target="_blank">HackTheBox</a>
-  <a href="https://tryhackme.com" target="_blank">TryHackMe</a>
-  <a href="https://owasp.org" target="_blank">OWASP</a>
+    <div class="node" onclick="toggle('dfir')">▶ Digital Forensics</div>
+    <div id="dfir" class="children">
+      <div class="tool-list">Autopsy, Volatility, Redline, FTK Imager</div>
+    </div>
+
+    <div class="node" onclick="toggle('red')">▶ Red Teaming</div>
+    <div id="red" class="children">
+      <div class="tool-list">Cobalt Strike, Sliver, Covenant, Mythic</div>
+    </div>
+
+    <div class="node" onclick="toggle('blue')">▶ Blue Teaming</div>
+    <div id="blue" class="children">
+      <div class="tool-list">SIEM: Wazuh, Splunk; IDS: Suricata, Zeek</div>
+    </div>
+
+    <div class="node" onclick="toggle('soceng')">▶ Social Engineering</div>
+    <div id="soceng" class="children">
+      <div class="tool-list">SET Toolkit, GoPhish</div>
+    </div>
+
+    <div class="node" onclick="toggle('hw')">▶ Hardware Hacking</div>
+    <div id="hw" class="children">
+      <div class="tool-list">USB Rubber Ducky, Flipper Zero, Proxmark3</div>
+    </div>
+
+    <div class="node" onclick="toggle('ctf')">▶ CTF Skills</div>
+    <div id="ctf" class="children">
+      <div class="tool-list">Tools: CyberChef, pwntools, Burp Suite Community</div>
+    </div>
+
+    <div class="node" onclick="toggle('web')">▶ Web Exploitation</div>
+    <div id="web" class="children">
+      <div class="tool-list">Burp Suite, SQLmap, XSStrike, ffuf</div>
+    </div>
+
+    <div class="node" onclick="toggle('mobile')">▶ Mobile Hacking</div>
+    <div id="mobile" class="children">
+      <div class="tool-list">MobSF, Drozer, Frida</div>
+    </div>
+
+    <div class="node" onclick="toggle('cloud')">▶ Cloud Security</div>
+    <div id="cloud" class="children">
+      <div class="tool-list">ScoutSuite, Prowler, IAM Analyzer</div>
+    </div>
+
+    <div class="node" onclick="toggle('dock')">▶ Container Security</div>
+    <div id="dock" class="children">
+      <div class="tool-list">Trivy, Falco, kube-hunter</div>
+    </div>
+
+    <div class="node" onclick="toggle('zero')">▶ Zero-Day Research</div>
+    <div id="zero" class="children">
+      <div class="tool-list">AFL++, LibFuzzer, Honggfuzz</div>
+    </div>
+
+    <div class="node" onclick="toggle('steg')">▶ Steganography</div>
+    <div id="steg" class="children">
+      <div class="tool-list">Stegseek, zsteg, OpenStego</div>
+    </div>
+
+    <div class="node" onclick="toggle('crack')">▶ Password Cracking</div>
+    <div id="crack" class="children">
+      <div class="tool-list">Hashcat, John the Ripper, PrinceGen</div>
+    </div>
+
+    <div class="node" onclick="toggle('hardos')">▶ OS Hardening</div>
+    <div id="hardos" class="children">
+      <div class="tool-list">AppArmor, SELinux, sysctl tweaks</div>
+    </div>
+
+    <div class="node" onclick="toggle('netdef')">▶ Network Defense</div>
+    <div id="netdef" class="children">
+      <div class="tool-list">Suricata, Zeek, PFsense, OPNsense</div>
+    </div>
+
+    <div class="node" onclick="toggle('anonnet')">▶ Anonymous Networking</div>
+    <div id="anonnet" class="children">
+      <div class="tool-list">Tor, Mullvad VPN, I2P</div>
+    </div>
+
+    <div class="node" onclick="toggle('securecode')">▶ Secure Coding</div>
+    <div id="securecode" class="children">
+      <div class="tool-list">SAST, DAST, fuzzing, sanitization frameworks</div>
+    </div>
+
+  </div>
 </div>
 
 <script>
 function toggle(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display==="block"?"none":"block";
+  var el=document.getElementById(id);
+  el.classList.toggle('open');
 }
 </script>
-
 </body>
 </html>
